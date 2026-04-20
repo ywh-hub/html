@@ -46,6 +46,10 @@ a {
     line-height: 80px;
 }
 
+.nav-menu ul li a:hover {
+    color: #4a90e2;
+}
+
 /* 主体内容区样式 */
 .container {
     width: 1200px;
@@ -79,6 +83,10 @@ a {
 .category-nav ul li {
     padding: 10px;
     border-bottom: 1px solid #eee;
+}
+
+.category-nav ul li a:hover {
+    color: #4a90e2;
 }
 
 /* 中间栏样式 */
