@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>图书商城</title>
+    <link rel="stylesheet" href="CSS/lab3-2503-108-index.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <div class="header">
+        <div class="header-content">
+            <div class="logo"><img src="img/xiaohui.webp" alt="校徽" class="xiaohui"><span>图书商城</span></div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">图书分类</a></li>
+                    <li><a href="#">热销排行</a></li>
+                    <li><a href="#" id="loginBtn">登录/注册</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主体内容区 -->
+    <div class="container">
+        <!-- 左侧栏 -->
+        <div class="left-column">
+            <div class="category-nav">
+                <h3>图书分类</h3>
+                <ul>
+                    <li><a href="#">文学小说</a></li>
+                    <li><a href="#">历史传记</a></li>
+                    <li><a href="#">经济管理</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 中间栏 -->
+        <div class="middle-column">
+            <div class="book-display">
+                <h3>精选图书</h3>
+                <div class="book-grid">
+                    <div class="book-item">
+                        <img src="img/book1.jpg" alt="图书1">
+                        <div class="book-info">
+                            <h4>朱自清散文精选集</h4>
+                            <p class="book-price">¥38.00</p>
+                        </div>
+                        <div class="book-overlay">
+                            <button>加入购物车</button>
+                        </div>
+                    </div>
+
+                    <div class="book-item">
+                        <img src="img/book2.jpg" alt="图书2">
+                        <div class="book-info">
+                            <h4>史记</h4>
+                            <p class="book-price">¥45.00</p>
+                        </div>
+                        <div class="book-overlay">
+                            <button>加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hot-recommend">
+                <h3>热门推荐</h3>
+                <div class="hot-books">
+                    <div class="hot-book-item">
+                        <img src="img/hot1.jpg" alt="热门图书1">
+                        <div class="hot-book-info">
+                            <h4>百年孤独</h4>
+                            <p>¥48.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="new-books">
+                <h3>新书上市</h3>
+                <table class="new-books-table">
+                    <tr>
+                        <th>书名</th>
+                        <th>作者</th>
+                        <th>价格</th>
+                    </tr>
+                    <tr>
+                        <td>《思考，快与慢》</td>
+                        <td>丹尼尔·卡尼曼</td>
+                        <td>¥38.00</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- 右侧栏 -->
+        <div class="right-column">
+            <div class="promotion">
+                <h3>促销信息</h3>
+                <div class="promotion-item">
+                    <img src="img/promo1.jpg" alt="促销1">
+                    <h4>满30减10</h4>
+                    <p>限时优惠</p>
+                    <button>立即抢购</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 登录/注册对话框 -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <!-- 登录表单 -->
+            <div class="form-container" id="loginForm">
+                <h2>用户登录</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="loginUsername">用户名</label>
+                        <input type="text" id="loginUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">密码</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="submit-btn">登录</button>
+                    <p class="switch-form">还没有账号？<a href="#" id="toRegister">立即注册</a></p>
+                </form>
+            </div>
+
+            <!-- 注册表单 -->
+            <div class="form-container" id="registerForm" style="display: none;">
+                <h2>用户注册</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="regUsername">用户名</label>
+                        <input type="text" id="regUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">密码</label>
+                        <input type="password" id="regPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regConfirmPassword">确认密码</label>
+                        <input type="password" id="regConfirmPassword" required>
+                    </div>
+                    <button type="submit" class="submit-btn">注册</button>
+                    <p class="switch-form">已有账号？<a href="#" id="toLogin">立即登录</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 获取DOM元素
+        const loginModal = document.getElementById('loginModal');
+        const loginBtn = document.getElementById('loginBtn');
+        const closeBtn = document.querySelector('.close');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        const toRegister = document.getElementById('toRegister');
+        const toLogin = document.getElementById('toLogin');
+
+        // 打开登录对话框
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginModal.style.display = 'block';
+        });
+
+        // 关闭对话框
+        closeBtn.addEventListener('click', function() {
+            loginModal.style.display = 'none';
+        });
+
+        // 点击对话框外部关闭
+        window.addEventListener('click', function(e) {
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+        });
+
+        // 切换到注册表单
+        toRegister.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+        });
+
+        // 切换到登录表单
+        toLogin.addEventListener('click', function(e) {
+            e.preventDefault();
+            registerForm.style.display = 'none';
+            loginForm.style.display = 'block';
+        });
+
+        // 处理注册表单提交
+        registerForm.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('regUsername').value;
+            const password = document.getElementById('regPassword').value;
+            const confirmPassword = document.getElementById('regConfirmPassword').value;
+
+            // 验证密码是否一致
+            if (password !== confirmPassword) {
+                alert('两次输入的密码不一致！');
+                return;
+            }
+
+            // 从本地存储获取用户数据
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // 检查用户名是否已存在
+            if (users.some(user => user.username === username)) {
+                alert('用户名已存在！');
+                return;
+            }
+
+            // 保存新用户
+            users.push({ username, password });
+            localStorage.setItem('users', JSON.stringify(users));
+
+            alert('注册成功！请登录');
+
+            // 切换到登录表单
+            registerForm.style.display = 'none';
+            loginForm.style.display = 'block';
+
+            // 清空表单
+            this.reset();
+        });
+
+        // 处理登录表单提交
+        loginForm.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            // 从本地存储获取用户数据
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // 验证用户名和密码
+            const user = users.find(user => user.username === username && user.password === password);
+
+            if (user) {
+                alert('登录成功！');
+                loginModal.style.display = 'none';
+                loginBtn.textContent = '欢迎，' + username;
+            } else {
+                alert('用户名或密码错误！');
+            }
+        });
+    </script>
+</body>
+</html>
