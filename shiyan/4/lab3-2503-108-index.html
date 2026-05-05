@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>图书商城</title>
+    <link rel="stylesheet" href="CSS/lab3-2503-108-index.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="logo"><img src="img/xiaohui.webp" alt="校徽" class="xiaohui"><span>图书商城</span></div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">图书分类</a></li>
+                    <li><a href="#">热销排行</a></li>
+                    <li><a href="#" id="loginBtn">登录/注册</a></li>
+                    <li class="icon-li">
+                        <div class="icon-item search-icon">
+                            <img src="img/search.jpg" alt="搜索">
+                        </div>
+                    </li>
+                    <li class="icon-li">
+                        <div class="icon-item cart-icon">
+                            <img src="img/cart.jpg" alt="购物车">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="left-column">
+            <div class="category-nav">
+                <h3>图书分类</h3>
+                <ul>
+                    <li><a href="#">文学小说</a></li>
+                    <li><a href="#">历史传记</a></li>
+                    <li><a href="#">经济管理</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="middle-column">
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/slide1.jpg" alt="轮播图1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/slide2.jpg" alt="轮播图2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/slide3.jpg" alt="轮播图3">
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+
+            <div class="book-display">
+                <h3>精选图书</h3>
+                <div class="book-grid">
+                    <div class="book-item">
+                        <img src="img/book1.jpg" alt="图书1">
+                        <div class="book-info">
+                            <h4>朱自清散文精选集</h4>
+                            <p class="book-price">¥38.00</p>
+                        </div>
+                        <div class="book-overlay">
+                            <button>加入购物车</button>
+                        </div>
+                    </div>
+
+                    <div class="book-item">
+                        <img src="img/book2.jpg" alt="图书2">
+                        <div class="book-info">
+                            <h4>史记</h4>
+                            <p class="book-price">¥45.00</p>
+                        </div>
+                        <div class="book-overlay">
+                            <button>加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hot-recommend">
+                <h3>热门推荐</h3>
+                <div class="hot-books">
+                    <div class="hot-book-item">
+                        <img src="img/hot1.jpg" alt="热门图书1">
+                        <div class="hot-book-info">
+                            <h4>百年孤独</h4>
+                            <p>¥48.00</p>
+                        </div>
+                    </div>
+                    <div class="hot-book-item">
+                        <img src="img/hot2.jpg" alt="热门图书2">
+                        <div class="hot-book-info">
+                            <h4>活着</h4>
+                            <p>¥42.00</p>
+                        </div>
+                    </div>
+                    <div class="hot-book-item">
+                        <img src="img/hot3.jpg" alt="热门图书3">
+                        <div class="hot-book-info">
+                            <h4>三体</h4>
+                            <p>¥55.00</p>
+                        </div>
+                    </div>
+                    <div class="hot-book-item">
+                        <img src="img/hot4.jpg" alt="热门图书4">
+                        <div class="hot-book-info">
+                            <h4>追风筝的人</h4>
+                            <p>¥39.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="new-books">
+                <h3>新书上市</h3>
+                <table class="new-books-table">
+                    <tr>
+                        <th>书名</th>
+                        <th>作者</th>
+                        <th>价格</th>
+                    </tr>
+                    <tr>
+                        <td>《思考，快与慢》</td>
+                        <td>丹尼尔·卡尼曼</td>
+                        <td>¥38.00</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="promotion">
+                <h3>促销信息</h3>
+                <div class="promotion-item">
+                    <img src="img/promo1.jpg" alt="促销1">
+                    <h4>满30减10</h4>
+                    <p>限时优惠</p>
+                    <button>立即抢购</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <div class="form-container" id="loginForm">
+                <h2>用户登录</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="loginUsername">用户名</label>
+                        <input type="text" id="loginUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">密码</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="submit-btn">登录</button>
+                    <p class="switch-form">还没有账号？<a href="#" id="toRegister">立即注册</a></p>
+                </form>
+            </div>
+
+            <div class="form-container" id="registerForm" style="display: none;">
+                <h2>用户注册</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="regUsername">用户名</label>
+                        <input type="text" id="regUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">密码</label>
+                        <input type="password" id="regPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regConfirmPassword">确认密码</label>
+                        <input type="password" id="regConfirmPassword" required>
+                    </div>
+                    <button type="submit" class="submit-btn">注册</button>
+                    <p class="switch-form">已有账号？<a href="#" id="toLogin">立即登录</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginModal = document.getElementById('loginModal');
+        const loginBtn = document.getElementById('loginBtn');
+        const closeBtn = document.querySelector('.close');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        const toRegister = document.getElementById('toRegister');
+        const toLogin = document.getElementById('toLogin');
+
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginModal.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', function() {
+            loginModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(e) {
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+        });
+
+        toRegister.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+        });
+
+        toLogin.addEventListener('click', function(e) {
+            e.preventDefault();
+            registerForm.style.display = 'none';
+            loginForm.style.display = 'block';
+        });
+
+        registerForm.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('regUsername').value;
+            const password = document.getElementById('regPassword').value;
+            const confirmPassword = document.getElementById('regConfirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert('两次输入的密码不一致！');
+                return;
+            }
+
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+
+            if (users.some(user => user.username === username)) {
+                alert('用户名已存在！');
+                return;
+            }
+
+            users.push({ username, password });
+            localStorage.setItem('users', JSON.stringify(users));
+
+            alert('注册成功！请登录');
+
+            registerForm.style.display = 'none';
+            loginForm.style.display = 'block';
+
+            this.reset();
+        });
+
+        loginForm.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            const user = users.find(user => user.username === username && user.password === password);
+
+            if (user) {
+                alert('登录成功！');
+                loginModal.style.display = 'none';
+                loginBtn.textContent = '欢迎，' + username;
+            } else {
+                alert('用户名或密码错误！');
+            }
+        });
+
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentIndex = 0;
+        const totalSlides = carouselItems.length;
+        let autoSlideInterval;
+
+        function showSlide(index) {
+            carouselItems.forEach((item, i) => {
+                item.classList.remove('active');
+                indicators[i].classList.remove('active');
+            });
+            carouselItems[index].classList.add('active');
+            indicators[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 4000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = index;
+                showSlide(currentIndex);
+                stopAutoSlide();
+                startAutoSlide();
+            });
+        });
+
+        startAutoSlide();
+    </script>
+</body>
+</html>
